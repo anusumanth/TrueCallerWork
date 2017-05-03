@@ -1,0 +1,23 @@
+CREATE TABLE Users(
+    	UID int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	MDN int(10) NOT NULL UNIQUE,
+   	Name varchar(50) NOT NULL,
+	Password varchar(50) NOT NULL,
+    	EmailId varchar(50) NOT NULL,
+    	Reg_Date date,
+	OSType varchar(20)
+);
+
+ALTER TABLE Users AUTO_INCREMENT=343; 
+
+
+CREATE TABLE Contacts(
+	ContactId int NOT NULL AUTO_INCREMENT,
+	UID int NOT NULL,
+	MDN int(10) NOT NULL,
+	Name varchar(50) NOT NULL,
+	PRIMARY KEY (ContactId, UID),
+	FOREIGN KEY (UID) REFERENCES Users(UID)
+);
+
+ALTER TABLE Contacts AUTO_INCREMENT=745;
