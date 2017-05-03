@@ -1,0 +1,22 @@
+var connection = require('./dbConnection');
+/* connection.query("SELECT * from Employee",function(err, rows, fields){
+        if(rows.length != 0){
+            data["error"] = 0;
+            data["Books"] = rows;
+            res.json(data);
+        }else{
+            data["Books"] = 'No books Found..';
+            res.json(data);
+        }
+    });*/
+
+
+ var data = {
+        "error":1,
+        "Books":""
+    };
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(express.json());       // to support JSON-encoded bodies
+app.use(express.urlencoded());
